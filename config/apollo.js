@@ -1,13 +1,8 @@
-import {
-  ApolloClient,
-  createHttpLink,
-  HttpLink,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-  uri: process.env.API_URL,
+  uri: 'http://graphql-server-production-0399.up.railway.app/',
 });
 
 const authLink = setContext((_, { headers }) => {
