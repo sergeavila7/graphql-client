@@ -83,7 +83,7 @@ const Login = () => {
   return (
     <>
       <Layout>
-        _{message && showMessage()}
+        {message && showMessage()}
         <h1 className='flex-center text-white text-2xl'>Login</h1>
         <div className='flex justify-center mt-5'>
           <div className='w-full max-w-sm'>

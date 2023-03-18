@@ -22,7 +22,7 @@ const Home = () => {
 
   if (loading) return 'Cargando...';
 
-  if (!data.getClientSeller) {
+  if (!data?.getClientSeller) {
     client.clearStore();
     router.push('/login');
     return <p>Loading...</p>;
@@ -49,7 +49,7 @@ const Home = () => {
               </tr>
             </thead>
             <tbody className='bg-white'>
-              {data.getClientSeller.map((client) => (
+              {data?.getClientSeller.map((client) => (
                 <Client key={client.id} client={client} />
               ))}
             </tbody>
