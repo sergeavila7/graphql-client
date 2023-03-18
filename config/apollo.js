@@ -1,5 +1,5 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
-import fetch from 'cross-fetch';
+import fetch from 'isomorphic-fetch';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
