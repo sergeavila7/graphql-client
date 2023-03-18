@@ -1,9 +1,9 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-  uri: 'http://graphql-server-production-0399.up.railway.app/',
+  uri: process.env.API_URL,
   fetch,
 });
 
