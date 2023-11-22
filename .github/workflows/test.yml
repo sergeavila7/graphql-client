@@ -1,0 +1,44 @@
+name: CI/CD para Next.js
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+      - name: Checkout código fuente
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Linting con ESLint
+        run: npm run lint
+
+      - name: Construir la aplicación
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Desplegar a servidor de producción
+        run: |
+          # Agrega aquí los comandos necesarios para desplegar tu aplicación en el servidor de producción.
+          # Puede ser mediante SCP, FTP, Docker, etc.
