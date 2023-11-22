@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-  uri: 'https://graphql-server-production-0399.up.railway.app/',
+  uri: 'https://graphql-server-y2mq.onrender.com/',
   fetch,
 });
 
